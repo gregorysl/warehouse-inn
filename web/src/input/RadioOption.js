@@ -1,6 +1,6 @@
 import React from "react";
 
-const Input = ({ label, checkedValue, onChange, group }) => {
+const RadioOption = ({ label, checkedValue, onChange, group }) => {
   const value = label.toLowerCase();
   return (
     <>
@@ -17,4 +17,4 @@ const Input = ({ label, checkedValue, onChange, group }) => {
   );
 };
 
-export default Input;
+export default RadioOption;
