@@ -14,8 +14,9 @@ test("should render checked radio button with label ", () => {
   const label = screen.getByText("Test");
   expect(label).toBeTruthy();
 
-  const radio = screen.getByRole("radio", { value: "test", checked: true });
+  const radio = screen.getByRole("radio");
   expect(radio).toBeTruthy();
+  expect(radio.checked).toBeTruthy();
 });
 
 test("should render unchecked radio button with label ", () => {
@@ -30,6 +31,7 @@ test("should render unchecked radio button with label ", () => {
   const label = screen.getByText("Test");
   expect(label).toBeTruthy();
 
-  const radio = screen.getByRole("radio", { value: "test", checked: true });
+  const radio = screen.getByRole("radio");
   expect(radio).toBeTruthy();
+  expect(radio.checked).toBeFalsy();
 });
