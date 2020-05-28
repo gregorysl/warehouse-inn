@@ -1,13 +1,13 @@
 import React from "react";
 import InputPanel from "./input/InputPanel";
-import Output from "./Output";
+import OutputPanel from "./OutputPanel";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <InputPanel />
-      <Output />
+      <OutputPanel />
     </div>
   );
 }

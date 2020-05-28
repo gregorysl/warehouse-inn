@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { generateReport, parseData } from "./warehouse";
 import { StoreContext } from "./store";
-const Output = () => {
+const OutputPanel = () => {
   const { text } = useContext(StoreContext);
   const itemsData = parseData(text);
   const warehouses = [...new Set(itemsData.map((item) => item.warehouseName))];
@@ -14,4 +14,4 @@ const Output = () => {
   );
 };
 
-export default Output;
+export default OutputPanel;
