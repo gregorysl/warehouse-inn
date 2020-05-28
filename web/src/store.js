@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 export const StoreContext = createContext(null);
 
 export default ({ children }) => {
-  const [text, setText] = useState("as");
+  const [text, setText] = useState("");
 
   const store = {
     text,

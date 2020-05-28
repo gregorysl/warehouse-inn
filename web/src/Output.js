@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { generateReport, parseData } from "./warehouse";
-const Output = ({ text }) => {
+import { StoreContext } from "./store";
+const Output = () => {
+  const { text } = useContext(StoreContext);
   const itemsData = parseData(text);
   const warehouses = [...new Set(itemsData.map((item) => item.warehouseName))];
   const result = generateReport(warehouses, itemsData);
