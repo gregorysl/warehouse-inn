@@ -15,7 +15,7 @@ const getInputType = (checkedValue) => {
 };
 
 const Input = () => {
-  const [checkedValue, setCheckecValue] = useState("text");
+  const [checkedValue, setCheckedValue] = useState("text");
   const inputComponent = getInputType(checkedValue);
   return (
     <div>
@@ -25,13 +25,13 @@ const Input = () => {
         <RadioOption
           label="Text"
           checkedValue={checkedValue}
-          onChange={(e) => setCheckecValue(e.target.value)}
+          onChange={(e) => setCheckedValue(e.target.value)}
           group="input-type"
         />
         <RadioOption
           label="File"
           checkedValue={checkedValue}
-          onChange={(e) => setCheckecValue(e.target.value)}
+          onChange={(e) => setCheckedValue(e.target.value)}
           group="input-type"
         />
       </div>
