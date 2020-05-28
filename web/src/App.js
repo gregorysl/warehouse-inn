@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Input from "./Input";
 import Output from "./Output";
 import "./App.css";
 
@@ -17,16 +18,7 @@ function App() {
   const [inputData, setInputData] = useState(text);
   return (
     <div className="App">
-      <div>
-        <h2>Input</h2>
-        <textarea
-          cols="80"
-          rows="20"
-          value={inputData}
-          onChange={(e) => setInputData(e.target.value)}
-          type="text"
-        />
-      </div>
+      <Input value={inputData} setValue={setInputData} />
       <Output text={inputData} />
     </div>
   );
