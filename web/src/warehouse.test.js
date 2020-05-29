@@ -68,3 +68,68 @@ test("should generate report", () => {
   );
   expect(result).toStrictEqual("warehouse (total: 1)\ntest: 1\n");
 });
+
+test("should generate report with products sorted", () => {
+  const result = generateReport(
+    ["warehouse"],
+    [
+      {
+        itemName: "b item",
+        stock: 1,
+        warehouseName: "warehouse",
+      },
+      {
+        itemName: "a item",
+        stock: 1,
+        warehouseName: "warehouse",
+      },
+    ]
+  );
+  expect(result).toStrictEqual("warehouse (total: 2)\na item: 1\nb item: 1\n");
+});
+
+test("should generate report warehouse sorted by name descending if count is same", () => {
+  const result = generateReport(
+    ["a warehouse", "warehouse"],
+    [
+      {
+        itemName: "b item",
+        stock: 1,
+        warehouseName: "a warehouse",
+      },
+      {
+        itemName: "a item",
+        stock: 1,
+        warehouseName: "warehouse",
+      },
+    ]
+  );
+  expect(result).toStrictEqual(
+    "warehouse (total: 1)\na item: 1\n\na warehouse (total: 1)\nb item: 1\n"
+  );
+});
+test("should generate report warehouse sorted by item count", () => {
+  const result = generateReport(
+    ["a warehouse", "warehouse"],
+    [
+      {
+        itemName: "b item",
+        stock: 1,
+        warehouseName: "a warehouse",
+      },
+      {
+        itemName: "a item",
+        stock: 1,
+        warehouseName: "warehouse",
+      },
+      {
+        itemName: "b item",
+        stock: 1,
+        warehouseName: "warehouse",
+      },
+    ]
+  );
+  expect(result).toStrictEqual(
+    "warehouse (total: 2)\na item: 1\nb item: 1\n\na warehouse (total: 1)\nb item: 1\n"
+  );
+});
