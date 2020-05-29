@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 
-export const StoreContext = createContext<ContextValue>({
+export const StoreContext = createContext<StoreProps>({
   text: "",
   setText: (e) => {},
 });
@@ -9,7 +9,7 @@ export const FakeStoreProvider = ({
   children,
   text,
   setText,
-}: ContextValue & Props) => (
+}: StoreProps & Props) => (
   <StoreContext.Provider
     value={{
       text,
@@ -28,12 +28,10 @@ export interface StoreProps {
   setText: (value: string) => void;
 }
 
-export type ContextValue = undefined | StoreProps;
-
 export default ({ children }: Props) => {
   const [text, setText] = useState("");
 
-  const store: ContextValue = {
+  const store: StoreProps = {
     text,
     setText,
   };
