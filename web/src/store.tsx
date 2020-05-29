@@ -1,9 +1,6 @@
 import React, { createContext, useState } from "react";
 
-export const StoreContext = createContext<StoreProps>({
-  text: "",
-  setText: (e) => {},
-});
+export const StoreContext = createContext<StoreProps>({} as StoreProps);
 
 export const FakeStoreProvider = ({
   children,
