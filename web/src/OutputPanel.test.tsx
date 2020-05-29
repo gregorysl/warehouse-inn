@@ -11,7 +11,7 @@ test("should render empty textarea", () => {
   );
   const textarea = container.querySelector("textarea");
   expect(textarea).toBeTruthy();
-  expect(textarea.value).toBeFalsy();
+  expect(textarea).toHaveProperty("value", "");
 });
 
 test("should have value in textarea for valid example", () => {
@@ -25,5 +25,5 @@ test("should have value in textarea for valid example", () => {
   );
   const textarea = container.querySelector("textarea");
   expect(textarea).toBeTruthy();
-  expect(textarea.value).toBe("warehouse (total: 1)\ntest: 1\n");
+  expect(textarea).toHaveProperty("value", "warehouse (total: 1)\ntest: 1\n");
 });
